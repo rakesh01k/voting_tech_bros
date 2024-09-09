@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Voting Platform</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Secure Voting Platform</h1>
+    </header>
+
+    <main>
+  <section>     
+        <section class="vote-section">
+            <h2>Cast Your Vote</h2>
+            <form id="vote">
+                <label for="candidate">Select Candidate:</label>
+                <select id="candidate" name="candidate">
+                    <option value="candidate1">Narendra Modi</option>
+                    <option value="candidate2">Rahul Gandhi</option>
+                    <option value="candidate3">Arvind Kejriwal</option>
+                </select>
+                
+            </form>
+        </section>
+        <script>
+            // candidate 1,2,3
+            // 1 -> 1 -> 2 -> 3 -> 1
+            showVote();
+            function castedVote() {
+               var ls = localStorage.getItem("votes");
+               if(ls == undefined || ls.length == 0) {
+                   localStorage.setItem("vote", "");
+               }
+               ls = localStorage.getItem("vote");
+               let votedFor = document.getElementById("vote-id").value;
+               ls += " -> " + votedFor;
+               localStorage.setItem("vote", ls);
+            }
+        
+            function showVote() {
+               var ls = localStorage.getItem("vote");
+               document.getElementById("show-vote").innerText = ls;
+            }
+          
+            </Script> 
+         
+           <main>
+               <section id="candidates">
+                  
+                   <ul id="candidateList">
+                       <!-- Candidates will be listed here -->
+                   </ul>
+             
+                <section id="vote">
+                   
+                   <form onsubmit="castedVote()">
+                       
+                        <label for="CandidateId">Candidate ID:</label>
+                    </form>
+        
+                    <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+                    <script src="app.js"></script>
+                    <form onsubmit="castedVote()">
+                        <input type="text" name="vote" id="vote-id" placeholder="Voter Id" />
+                        <button>Vote</button>
+                    </form>
+                 
+                 
+                  <div id="show-vote"></div>
+              </section>
+              </main>
+              
+              <footer>
+                  <p>&copy; 2024 Secure Voting Platform. All rights reserved.</p>
+              </footer>
+              <div class="row">
+
+                <div class="column">
+                    <img src="images/modi.jpeg" width="100%;">
+                    <center><figcaption >Narendra Modi</figcaption></center>
+                
+                </div>
+                
+                <div class="column">
+                    <img src="images/rahul.jpeg" width="100%;">
+                    <center><figcaption >Rahul Gandhi</figcaption></center>
+                
+                </div>
+                
+                <div class="column">
+                
+                <img src="images/kejriwal.jpeg" width="100%;">
+                <center><figcaption >Arvind Kejriwal</figcaption></center>
+                
+                </div>
+                
+                </div>
+              </div>
+              
+             <p>
+               <p align="center" margin="100" >NEW USER? <a href="https://www.jotform.com/build/242508104714449?s=templates">Register Now!</a></p>
+               <p align="center"><a href="http://127.0.0.1:5500/status.html">Voting Status</a></p>
+               <a href="#"></a></li>
+               <a href="#"></a></li>
+               <a href="#"></li>
+             </p>
+              
+             
+          </body>
+            <script>
+              // candidate 1,2,3
+              // 1 -> 1 -> 2 -> 3 -> 1
+              showVote();
+              function castedVote() {
+                  var ls = localStorage.getItem("votes");
+                  if(ls == undefined || ls.length == 0) {
+                      localStorage.setItem("vote", "");
+                  }
+                  ls = localStorage.getItem("vote");
+                  let votedFor = document.getElementById("vote-id").value;
+        ls += " -> " + votedFor;
+        localStorage.setItem("vote", ls);
+    }
+ 
+    function showVote() {
+        var ls = localStorage.getItem("vote");
+        document.getElementById("show-vote").innerText = ls;
+    }
+  </script>
+</section> 
+</html>                 
